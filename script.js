@@ -1,11 +1,15 @@
+var playerScore = 0;
+var computerScore = 0;
+var playerSelection;
+
 function computerPlay(){
     const wepons = ["rock","paper","scissors"];
     return wepons[Math.floor(Math.random() * wepons.length)];
 }
 
-
-
 function playRound(playerSelection, computerSelection){
+    
+    
     if(playerSelection == "rock" && computerSelection == "paper"){
         computerScore += 1;
         return "You Lose! Paper beats Rock";
@@ -32,23 +36,24 @@ function playRound(playerSelection, computerSelection){
         return "It is draw!";
     }
 
-var computerScore = 0;
-var playerScore = 0;
 
-function game(){
-    while(computerScore < 5  && playerScore < 5){
-        var playerSelection = prompt("Choice your wepon = Rock Paper Scissors").toLowerCase();
-        var computerSelection = computerPlay();
-        console.log(playRound(playerSelection,computerSelection));
-    }
-    if(computerScore == 5){
-        return "Computer Win!";
-    }else{
-        return "You Win!";
-    }
-}
+document.getElementById("rock").addEventListener("click", function(){
+    playerSelection = "rock";
+    computerSelection = computerPlay();
+    console.log(playRound(playerSelection,computerSelection))});
 
-console.log(game());
+document.getElementById("paper").addEventListener("click", function(){
+    playerSelection = "paper";
+    computerSelection = computerPlay();
+    console.log(playRound(playerSelection,computerSelection))});
 
+document.getElementById("scissor").addEventListener("click", function(){
+    playerSelection = "scissors";
+    computerSelection = computerPlay();
+    console.log(playRound(playerSelection,computerSelection))});
+        
 
-
+if(computerScore == 5){
+    console.log("Computer Win!") ;
+}else if(playerSelection == 5){
+    console.log("You Win!");}
