@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
     <body>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissor">Scissor</button>
+        <div id="buttons">
+            <button id="rock" class="buttons">Rock</button>
+            <button id="paper" class="buttons">Paper</button>
+            <button id="scissor"  class="buttons">Scissor</button>
+            <button id="newgame">New Game</button>
+        </div>
+        <div id="scoreboard">
+            <div id="player">0</div>
+            <div id="computer">0</div>
+        </div>
+        <div id="score"></div>
     </body>
 </html>
