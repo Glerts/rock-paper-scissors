@@ -17,10 +17,10 @@ function winner(playerScore, computerScore){
     //To chose for winner
 
     if (playerScore == 5){
-        document.getElementById("score").innerHTML = "You Win!";
+        document.getElementById("score").innerHTML = "YOU WIN THE GAME!";
         disable();
        }else if(computerScore == 5){
-        document.getElementById("score").innerHTML = "Computer Win!";
+        document.getElementById("score").innerHTML = "YOU LOSE! COMPUTER BEAT YOU!";
         disable();
     }else{
         return
@@ -41,28 +41,37 @@ function playRound(playerSelection, computerSelection){
     
     if(playerSelection == "rock" && computerSelection == "paper"){
         computerScore += 1;
-        return "You Lose! Paper beats Rock";
+        document.getElementById("score").innerHTML = "You Lose! Paper beats Rock";
+        return 
     }else if(playerSelection == "rock" && computerSelection == "scissors"){
         playerScore += 1;
-        return "You Win! Rock beats Scissors";
+        document.getElementById("score").innerHTML = "You Win! Rock beats Scissors";
+        return 
     }else if(playerSelection == "rock" && computerSelection == "rock"){
-        return "It is draw!";
+        document.getElementById("score").innerHTML = "It is draw!";  
+        return   
     }else if(playerSelection == "paper" && computerSelection == "scissors"){
         computerScore += 1;
-        return "You Lose! Scissors beats Paper";
+        document.getElementById("score").innerHTML = "You Lose! Scissors beats Paper";
+        return 
     }else if(playerSelection == "paper" && computerSelection == "rock"){
         playerScore += 1;
-        return "You Win! Paper beats Rock";
+        document.getElementById("score").innerHTML = "You Win! Paper beats Rock";
+        return 
     }else if(playerSelection == "paper" && computerSelection == "paper"){
-        return "It is draw!";
+        document.getElementById("score").innerHTML = "It is draw!";
+        return 
     }else if(playerSelection == "scissors" && computerSelection == "rock"){
         computerScore += 1;
-        return "You Lose! Rock beats Scissors";
+        document.getElementById("score").innerHTML = "You Lose! Rock beats Scissors";
+        return 
     }else if(playerSelection == "scissors" && computerSelection == "paper"){
         playerScore += 1;
-        return "You Win! Scissors beats Paper";
+        document.getElementById("score").innerHTML = "You Win! Scissors beats Paper";
+        return 
     }else(playerSelection == "scissors" && computerSelection == "scissors");
-        return "It is draw!";
+        document.getElementById("score").innerHTML = "It is draw!";
+        return
     }
 
 //Buttons coding
