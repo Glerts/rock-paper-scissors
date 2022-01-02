@@ -32,8 +32,21 @@ function computerPlay(){
     //For computer chose randomly
 
     const wepons = ["rock","paper","scissors"];
-    return wepons[Math.floor(Math.random() * wepons.length)];
+    var wepon = wepons[Math.floor(Math.random() * wepons.length)];
+    if(wepon == "rock"){
+        document.getElementById("computer-img").src="/img/rock-icon-grey.png"
+    }
+    else if(wepon == "paper"){
+        document.getElementById("computer-img").src="/img/paper-icon-grey.png"
+    }
+    else if(wepon == "scissors"){
+        document.getElementById("computer-img").src="/img/scissors-icon-grey.png"
+    }
+    return wepon;
+
 }
+
+
 
 function playRound(playerSelection, computerSelection){
 
@@ -81,6 +94,7 @@ document.getElementById("rock").addEventListener("click", function(){
     computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection));
     document.getElementById("player").innerHTML = playerScore;
+    document.getElementById("player-img").src="/img/rock-icon-grey.png"
     document.getElementById("computer").innerHTML = computerScore;
     winner(playerScore,computerScore);
 });
@@ -91,6 +105,7 @@ document.getElementById("paper").addEventListener("click", function(){
     computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection))
     document.getElementById("player").innerHTML = playerScore;
+    document.getElementById("player-img").src="/img/paper-icon-grey.png"
     document.getElementById("computer").innerHTML = computerScore;
     winner(playerScore,computerScore);
 });
@@ -100,6 +115,7 @@ document.getElementById("scissor").addEventListener("click", function(){
     computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection));
     document.getElementById("player").innerHTML = playerScore;
+    document.getElementById("player-img").src="/img/scissors-icon-grey.png"
     document.getElementById("computer").innerHTML = computerScore;
     winner(playerScore,computerScore);
 });
@@ -111,6 +127,8 @@ document.getElementById("newgame").addEventListener("click", function(){
     document.getElementById("player").innerHTML = playerScore = 0;
     document.getElementById("computer").innerHTML = computerScore = 0;
     document.getElementById("score").innerHTML = "";
+    document.getElementById("player-img").src=""
+    document.getElementById("computer-img").src=""
     newGame.disabled = true;
     console.clear();
 })
