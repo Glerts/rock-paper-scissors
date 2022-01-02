@@ -34,13 +34,13 @@ function computerPlay(){
     const wepons = ["rock","paper","scissors"];
     var wepon = wepons[Math.floor(Math.random() * wepons.length)];
     if(wepon == "rock"){
-        document.getElementById("computer-img").src="/img/rock-icon-grey.png"
+        document.getElementById("computer-img").src="img/rock-icon-grey.png"
     }
     else if(wepon == "paper"){
-        document.getElementById("computer-img").src="/img/paper-icon-grey.png"
+        document.getElementById("computer-img").src="img/paper-icon-grey.png"
     }
     else if(wepon == "scissors"){
-        document.getElementById("computer-img").src="/img/scissors-icon-grey.png"
+        document.getElementById("computer-img").src="img/scissors-icon-grey.png"
     }
     return wepon;
 
@@ -94,7 +94,7 @@ document.getElementById("rock").addEventListener("click", function(){
     computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection));
     document.getElementById("player").innerHTML = playerScore;
-    document.getElementById("player-img").src="/img/rock-icon-grey.png"
+    document.getElementById("player-img").src="img/rock-icon-grey.png"
     document.getElementById("computer").innerHTML = computerScore;
     winner(playerScore,computerScore);
 });
@@ -105,7 +105,7 @@ document.getElementById("paper").addEventListener("click", function(){
     computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection))
     document.getElementById("player").innerHTML = playerScore;
-    document.getElementById("player-img").src="/img/paper-icon-grey.png"
+    document.getElementById("player-img").src="img/paper-icon-grey.png"
     document.getElementById("computer").innerHTML = computerScore;
     winner(playerScore,computerScore);
 });
@@ -115,7 +115,7 @@ document.getElementById("scissor").addEventListener("click", function(){
     computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection));
     document.getElementById("player").innerHTML = playerScore;
-    document.getElementById("player-img").src="/img/scissors-icon-grey.png"
+    document.getElementById("player-img").src="img/scissors-icon-grey.png"
     document.getElementById("computer").innerHTML = computerScore;
     winner(playerScore,computerScore);
 });
